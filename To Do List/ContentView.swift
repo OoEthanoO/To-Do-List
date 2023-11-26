@@ -12,40 +12,74 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Task.createdAt, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var tasks: FetchedResults<Task>
+    
+    @State var newTitle: String = ""
 
     var body: some View {
-        NavigationView {
+        NavigationSplitView {
+            HStack {
+                TextField("Add a task", text: $newTitle)
+                    .onSubmit {
+                        addTask()
+                    }
+                
+                Button {
+                    addTask()
+                } label: {
+                    Text("Add")
+                }
+            }
+            .padding()
+            
             List {
-                ForEach(items) { item in
+                ForEach(tasks) { task in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        TaskDetails(task: task)
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        HStack {
+                            Button {
+                                task.isComplete.toggle()
+                            } label: {
+                                Label("", systemImage: task.isComplete ? "checkmark.diamond.fill" : "checkmark.diamond")
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            
+                            
+                            Text(task.title)
+                                .strikethrough(task.isComplete)
+                                .foregroundColor(task.isComplete ? .gray : .primary)
+                            
+                            Spacer()
+                            
+                            Button {
+                                deleteTask(task)
+                            } label: {
+                                Label("", systemImage: "trash.fill")
+                                    .foregroundColor(.red)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
+            .navigationTitle("To Do List")
+        } detail: {
+            Text("Select a Task")
         }
     }
 
-    private func addItem() {
+    private func addTask() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            guard !newTitle.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+                return
+            }
+            let newTask = Task(context: viewContext)
+            newTask.createdAt = Date()
+            newTask.title = newTitle
+            newTitle = ""
 
             do {
                 try viewContext.save()
@@ -58,15 +92,14 @@ struct ContentView: View {
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteTask(_ task: Task) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            viewContext.delete(task)
 
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                // Handle error
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
