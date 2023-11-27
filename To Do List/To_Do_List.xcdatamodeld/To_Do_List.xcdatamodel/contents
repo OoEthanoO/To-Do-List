@@ -6,6 +6,7 @@
     <entity name="Task" representedClassName="Task" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isComplete" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="priority" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String" defaultValueString=""/>
     </entity>
 </model>

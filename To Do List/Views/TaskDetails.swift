@@ -20,8 +20,29 @@ struct TaskDetails: View {
             HStack {
                 TextField("Enter Task Name Here", text: $task.title)
                     .onChange(of: task.title) {
-                        saveChanges() // Save changes when text field value changes
+                        saveChanges()
                     }
+            }
+            .padding()
+            
+            HStack {
+                Text("Edit Priority")
+                
+                Spacer()
+                
+                Label("", systemImage: task.priority == "None" ? "tag" : "tag.fill")
+                    .foregroundColor(ContentView().priorityColor(task.priority))
+
+                Picker("", selection: $task.priority) {
+                    ForEach(Priorties.allCases) { priority in
+                        Text(priority.rawValue)
+                            .tag(priority)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
+                .onChange(of: task.priority) {
+                    saveChanges()
+                }
             }
             .padding()
             
@@ -34,6 +55,7 @@ struct TaskDetails: View {
                     task.isComplete.toggle()
                 } label: {
                     Label("", systemImage: task.isComplete ? "checkmark.diamond.fill" : "checkmark.diamond")
+                        .foregroundColor(task.isComplete ? .green : .blue)
                 }
                 .buttonStyle(PlainButtonStyle())
                 .onChange(of: task.isComplete) {
@@ -58,6 +80,7 @@ struct TaskDetails: View {
     let viewContext = result.container.viewContext
     let newTask = Task(context: viewContext)
     newTask.createdAt = Date()
+    newTask.priority = "High"
     newTask.isComplete = false
     return TaskDetails(task: newTask)
 }

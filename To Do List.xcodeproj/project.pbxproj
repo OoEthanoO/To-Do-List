@@ -16,12 +16,12 @@
 		81B6C8692B12D93E002B34EC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6C8682B12D93E002B34EC /* Persistence.swift */; };
 		81B6C86C2B12D93E002B34EC /* To_Do_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81B6C86A2B12D93E002B34EC /* To_Do_List.xcdatamodeld */; };
 		81B6C8732B12D97E002B34EC /* TaskDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6C8722B12D97E002B34EC /* TaskDetails.swift */; };
+		81F243EF2B1416B9005D07F7 /* Priorties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F243EE2B1416B8005D07F7 /* Priorties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8126A79D2B12DFC7000915F9 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8126A79E2B12DFC7000915F9 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8126A7A52B12E30A000915F9 /* Mac To Do List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mac To Do List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B6C85C2B12D93D002B34EC /* To Do List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B6C85F2B12D93D002B34EC /* To_Do_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Do_ListApp.swift; sourceTree = "<group>"; };
 		81B6C8612B12D93D002B34EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,16 +30,10 @@
 		81B6C8682B12D93E002B34EC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		81B6C86B2B12D93E002B34EC /* To_Do_List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = To_Do_List.xcdatamodel; sourceTree = "<group>"; };
 		81B6C8722B12D97E002B34EC /* TaskDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetails.swift; sourceTree = "<group>"; };
+		81F243EE2B1416B8005D07F7 /* Priorties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priorties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8126A7A22B12E30A000915F9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		81B6C8592B12D93D002B34EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,11 +44,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		810F021F2B13E2370062F4C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				81B6C8722B12D97E002B34EC /* TaskDetails.swift */,
+				81B6C8612B12D93D002B34EC /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		810F02202B13E2460062F4C6 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				81B6C8682B12D93E002B34EC /* Persistence.swift */,
+				8126A79E2B12DFC7000915F9 /* Task+CoreDataProperties.swift */,
+				8126A79D2B12DFC7000915F9 /* Task+CoreDataClass.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		81B6C8532B12D93D002B34EC = {
 			isa = PBXGroup;
 			children = (
-				8126A79D2B12DFC7000915F9 /* Task+CoreDataClass.swift */,
-				8126A79E2B12DFC7000915F9 /* Task+CoreDataProperties.swift */,
+				810F02202B13E2460062F4C6 /* Core Data */,
 				81B6C85E2B12D93D002B34EC /* To Do List */,
 				81B6C85D2B12D93D002B34EC /* Products */,
 			);
@@ -64,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				81B6C85C2B12D93D002B34EC /* To Do List.app */,
-				8126A7A52B12E30A000915F9 /* Mac To Do List.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,13 +83,12 @@
 		81B6C85E2B12D93D002B34EC /* To Do List */ = {
 			isa = PBXGroup;
 			children = (
+				810F021F2B13E2370062F4C6 /* Views */,
 				81B6C85F2B12D93D002B34EC /* To_Do_ListApp.swift */,
-				81B6C8612B12D93D002B34EC /* ContentView.swift */,
 				81B6C8632B12D93E002B34EC /* Assets.xcassets */,
-				81B6C8682B12D93E002B34EC /* Persistence.swift */,
 				81B6C86A2B12D93E002B34EC /* To_Do_List.xcdatamodeld */,
 				81B6C8652B12D93E002B34EC /* Preview Content */,
-				81B6C8722B12D97E002B34EC /* TaskDetails.swift */,
+				81F243EE2B1416B8005D07F7 /* Priorties.swift */,
 			);
 			path = "To Do List";
 			sourceTree = "<group>";
@@ -94,23 +104,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8126A7A42B12E30A000915F9 /* Mac To Do List */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8126A7B62B12E30C000915F9 /* Build configuration list for PBXNativeTarget "Mac To Do List" */;
-			buildPhases = (
-				8126A7A12B12E30A000915F9 /* Sources */,
-				8126A7A22B12E30A000915F9 /* Frameworks */,
-				8126A7A32B12E30A000915F9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Mac To Do List";
-			productName = "Mac To Do List";
-			productReference = 8126A7A52B12E30A000915F9 /* Mac To Do List.app */;
-			productType = "com.apple.product-type.application";
-		};
 		81B6C85B2B12D93D002B34EC /* To Do List */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81B6C86F2B12D93E002B34EC /* Build configuration list for PBXNativeTarget "To Do List" */;
@@ -138,9 +131,6 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					8126A7A42B12E30A000915F9 = {
-						CreatedOnToolsVersion = 15.0.1;
-					};
 					81B6C85B2B12D93D002B34EC = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -160,19 +150,11 @@
 			projectRoot = "";
 			targets = (
 				81B6C85B2B12D93D002B34EC /* To Do List */,
-				8126A7A42B12E30A000915F9 /* Mac To Do List */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8126A7A32B12E30A000915F9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		81B6C85A2B12D93D002B34EC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -185,13 +167,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8126A7A12B12E30A000915F9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		81B6C8582B12D93D002B34EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -199,6 +174,7 @@
 				81B6C8692B12D93E002B34EC /* Persistence.swift in Sources */,
 				81B6C8622B12D93D002B34EC /* ContentView.swift in Sources */,
 				81B6C8602B12D93D002B34EC /* To_Do_ListApp.swift in Sources */,
+				81F243EF2B1416B9005D07F7 /* Priorties.swift in Sources */,
 				81B6C8732B12D97E002B34EC /* TaskDetails.swift in Sources */,
 				8126A7A02B12DFC7000915F9 /* Task+CoreDataProperties.swift in Sources */,
 				8126A79F2B12DFC7000915F9 /* Task+CoreDataClass.swift in Sources */,
@@ -209,60 +185,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		8126A7B72B12E30C000915F9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Mac To Do List/Mac_To_Do_List.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Mac To Do List/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ethanyan.Mac-To-Do-List";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		8126A7B82B12E30C000915F9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Mac To Do List/Mac_To_Do_List.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Mac To Do List/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ethanyan.Mac-To-Do-List";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		81B6C86D2B12D93E002B34EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -443,15 +365,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8126A7B62B12E30C000915F9 /* Build configuration list for PBXNativeTarget "Mac To Do List" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8126A7B72B12E30C000915F9 /* Debug */,
-				8126A7B82B12E30C000915F9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		81B6C8572B12D93D002B34EC /* Build configuration list for PBXProject "To Do List" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
