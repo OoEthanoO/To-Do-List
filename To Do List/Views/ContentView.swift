@@ -9,13 +9,28 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    private let itemFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        return formatter
+    }()
+    
     enum SortOptions: String, CaseIterable, Identifiable {
         case createdAt = "Creation Date"
         case isComplete = "Completion"
         case priority = "Priority"
         case title = "Title"
+        case dueDate = "Due Date"
         
         var id: String { self.rawValue }
+    }
+    
+    private func dayOnlyComparator(date1: Date, date2: Date) -> ComparisonResult {
+        let calendar = Calendar.current
+        let day1 = calendar.startOfDay(for: date1)
+        let day2 = calendar.startOfDay(for: date2)
+        return calendar.compare(day1, to: day2, toGranularity: .day)
     }
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -41,6 +56,10 @@ struct ContentView: View {
                     return task1.createdAt ?? Date() < task2.createdAt ?? Date()
                 }
             case .priority:
+                if task1.priority == task2.priority {
+                    return task1.createdAt ?? Date() < task2.createdAt ?? Date()
+                }
+                
                 if task1.priority == "High" {
                     return true
                 }
@@ -58,6 +77,21 @@ struct ContentView: View {
                 }
                 
                 return false
+            case .dueDate:
+                if task1.haveDueDate == false && task2.haveDueDate == false {
+                    return (task1.createdAt ?? Date()) < (task2.createdAt ?? Date())
+                }
+                
+                if task1.haveDueDate != task2.haveDueDate {
+                    return task1.haveDueDate && !task2.haveDueDate
+                }
+                
+                let dayComparator = dayOnlyComparator(date1: task1.dueDate, date2: task2.dueDate)
+                if dayComparator != .orderedSame {
+                    return dayComparator == .orderedAscending
+                } else {
+                    return (task1.createdAt ?? Date()) < (task2.createdAt ?? Date())
+                }
             }
         }
     }
@@ -141,11 +175,25 @@ struct ContentView: View {
                                 
                             }
                             
-                            Text(task.title)
-                                .strikethrough(task.isComplete)
-                                .foregroundColor(task.isComplete ? .gray : priorityColor(task.priority))
-                            
-                            Spacer()
+                            VStack {
+                                HStack {
+                                    Text(task.title)
+                                        .strikethrough(task.isComplete)
+                                        .foregroundColor(task.isComplete ? .gray : priorityColor(task.priority))
+                                    
+                                    Spacer()
+                                }
+                                
+                                
+                                if task.haveDueDate {
+                                    HStack {
+                                        Text(itemFormatter.string(from: task.dueDate))
+                                            .font(.subheadline)
+                                            .foregroundColor(.secondary)
+                                            Spacer()
+                                    }
+                                }
+                            }
                             
                             Button {
                                 deleteTask(task)
@@ -176,6 +224,8 @@ struct ContentView: View {
             newTask.createdAt = Date()
             newTask.title = newTitle
             newTask.priority = newPriority.rawValue
+            newTask.dueDate = Date()
+            newTask.haveDueDate = false
             newTitle = ""
 
             saveChanges()

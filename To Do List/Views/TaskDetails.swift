@@ -63,6 +63,32 @@ struct TaskDetails: View {
                 }
             }
             .padding()
+            
+            HStack {
+                Toggle("", isOn: $task.haveDueDate)
+                    .onChange(of: task.haveDueDate) {
+                        saveChanges()
+                    }
+                    .labelsHidden()
+                    .padding(.trailing)
+                
+                Text("Due Date")
+                    .foregroundColor(task.haveDueDate ? .primary : .gray)
+                
+                Spacer()
+                
+                DatePicker(
+                    "",
+                    selection: $task.dueDate,
+                    in: Date()...,
+                    displayedComponents: [.date]
+                )
+                .disabled(!task.haveDueDate)
+                .onChange(of: task.dueDate) {
+                    saveChanges()
+                }
+            }
+            .padding()
         }
     }
     
@@ -75,12 +101,18 @@ struct TaskDetails: View {
     }
 }
 
-#Preview {
-    let result = PersistenceController(inMemory: true)
-    let viewContext = result.container.viewContext
-    let newTask = Task(context: viewContext)
-    newTask.createdAt = Date()
-    newTask.priority = "High"
-    newTask.isComplete = false
-    return TaskDetails(task: newTask)
+struct TaskDetails_Previews: PreviewProvider {
+    static var previews: some View {
+        let result = PersistenceController(inMemory: true)
+        let viewContext = result.container.viewContext
+        let newTask = Task(context: viewContext)
+        newTask.createdAt = Date()
+        newTask.priority = "High"
+        newTask.isComplete = false
+        newTask.dueDate = Date()
+        newTask.haveDueDate = true
+        
+        return TaskDetails(task: newTask)
+            .environment(\.managedObjectContext, viewContext)
+    }
 }

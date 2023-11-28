@@ -7,6 +7,7 @@ This simple To-Do List application allows you to manage your tasks efficiently. 
 - **Add Tasks:** Easily add new tasks to your list.
 - **Edit Tasks:** Update task names and mark them as complete.
 - **Delete Tasks:** Remove tasks that are no longer needed.
+- **Add Priorities:** Add different levels of priorities to your tasks
 
 ## Technologies Used
 

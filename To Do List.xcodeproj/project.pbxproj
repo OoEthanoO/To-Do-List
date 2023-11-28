@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8126A79F2B12DFC7000915F9 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126A79D2B12DFC7000915F9 /* Task+CoreDataClass.swift */; };
-		8126A7A02B12DFC7000915F9 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126A79E2B12DFC7000915F9 /* Task+CoreDataProperties.swift */; };
+		813AD5152B159238003010D3 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813AD5142B159238003010D3 /* Task+CoreDataClass.swift */; };
+		813AD5172B15923D003010D3 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813AD5162B15923D003010D3 /* Task+CoreDataProperties.swift */; };
 		81B6C8602B12D93D002B34EC /* To_Do_ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6C85F2B12D93D002B34EC /* To_Do_ListApp.swift */; };
 		81B6C8622B12D93D002B34EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6C8612B12D93D002B34EC /* ContentView.swift */; };
 		81B6C8642B12D93E002B34EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B6C8632B12D93E002B34EC /* Assets.xcassets */; };
@@ -20,8 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8126A79D2B12DFC7000915F9 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8126A79E2B12DFC7000915F9 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		813AD5142B159238003010D3 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		813AD5162B15923D003010D3 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		81B6C85C2B12D93D002B34EC /* To Do List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B6C85F2B12D93D002B34EC /* To_Do_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Do_ListApp.swift; sourceTree = "<group>"; };
 		81B6C8612B12D93D002B34EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,9 +56,9 @@
 		810F02202B13E2460062F4C6 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				813AD5142B159238003010D3 /* Task+CoreDataClass.swift */,
 				81B6C8682B12D93E002B34EC /* Persistence.swift */,
-				8126A79E2B12DFC7000915F9 /* Task+CoreDataProperties.swift */,
-				8126A79D2B12DFC7000915F9 /* Task+CoreDataClass.swift */,
+				813AD5162B15923D003010D3 /* Task+CoreDataProperties.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -173,11 +173,11 @@
 			files = (
 				81B6C8692B12D93E002B34EC /* Persistence.swift in Sources */,
 				81B6C8622B12D93D002B34EC /* ContentView.swift in Sources */,
+				813AD5152B159238003010D3 /* Task+CoreDataClass.swift in Sources */,
 				81B6C8602B12D93D002B34EC /* To_Do_ListApp.swift in Sources */,
+				813AD5172B15923D003010D3 /* Task+CoreDataProperties.swift in Sources */,
 				81F243EF2B1416B9005D07F7 /* Priorties.swift in Sources */,
 				81B6C8732B12D97E002B34EC /* TaskDetails.swift in Sources */,
-				8126A7A02B12DFC7000915F9 /* Task+CoreDataProperties.swift in Sources */,
-				8126A79F2B12DFC7000915F9 /* Task+CoreDataClass.swift in Sources */,
 				81B6C86C2B12D93E002B34EC /* To_Do_List.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"To Do List/Preview Content\"";
@@ -327,6 +328,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ethanyan.To-Do-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,6 +340,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"To Do List/Preview Content\"";
@@ -356,6 +359,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ethanyan.To-Do-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

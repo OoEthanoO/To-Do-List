@@ -20,6 +20,8 @@ extension Task {
     @NSManaged public var isComplete: Bool
     @NSManaged public var title: String
     @NSManaged public var priority: String
+    @NSManaged public var dueDate: Date
+    @NSManaged public var haveDueDate: Bool
 }
 
 extension Task : Identifiable {

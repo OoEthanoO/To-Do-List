@@ -18,6 +18,8 @@ struct PersistenceController {
             newTask.createdAt = Date()
             newTask.title = "Sample Task"
             newTask.priority = "High"
+            newTask.haveDueDate = false
+            newTask.dueDate = Date()
         }
         do {
             try viewContext.save()
