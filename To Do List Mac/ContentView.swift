@@ -109,7 +109,7 @@ struct ContentView: View {
             HStack {
                 Text("Sort By: ")
                 
-                Picker("", selection: $selectedOption.animation(nil)) {
+                Picker("", selection: $selectedOption.animation(appAnimation)) {
                     ForEach(SortOptions.allCases) { option in
                         Text(option.rawValue).tag(option)
                     }

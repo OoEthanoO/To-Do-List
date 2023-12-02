@@ -1,61 +1,61 @@
 {
   "images" : [
     {
-      "filename" : "Resize PNG online.png",
+      "filename" : "icon_16x16.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
-      "filename" : "Resize PNG online (1).png",
+      "filename" : "icon_16x16@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "Resize PNG online (1) 1.png",
+      "filename" : "icon_32x32.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
-      "filename" : "Resize PNG online (2).png",
+      "filename" : "icon_32x32@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
-      "filename" : "Resize PNG online (3).png",
+      "filename" : "icon_128x128.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "Resize PNG online (4).png",
+      "filename" : "icon_128x128@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "Resize PNG online (4) 1.png",
+      "filename" : "icon_256x256.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "Resize PNG online (5).png",
+      "filename" : "icon_256x256@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "Resize PNG online (5) 1.png",
+      "filename" : "icon_512x512.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "407a30a7-cf52-4bb2-b59a-ee4110666894 9.png",
+      "filename" : "icon_512x512@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
