@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  To Do List
+//  To Do List Mac
 //
-//  Created by Ethan Xu on 2023-11-25.
+//  Created by Ethan Xu on 2023-11-29.
 //
 
 import SwiftUI
@@ -44,7 +44,7 @@ struct ContentView: View {
         tasks.sorted { (task1: Task, task2: Task) -> Bool in
             switch selectedOption {
             case .title:
-                return task1.title < task2.title 
+                return task1.title < task2.title
             case .createdAt:
                 return task1.createdAt ?? Date() < task2.createdAt ?? Date()
             case .isComplete:
@@ -56,24 +56,16 @@ struct ContentView: View {
                     return task1.createdAt ?? Date() < task2.createdAt ?? Date()
                 }
             case .priority:
-                if task1.priority == task2.priority {
-                    return task1.createdAt ?? Date() < task2.createdAt ?? Date()
+                let priorityOrder: [Priorities] = [.high, .medium, .low, .none]
+                        
+                guard let priority1 = Priorities(rawValue: task1.priority ),
+                      let priority2 = Priorities(rawValue: task2.priority ) else {
+                    return false
                 }
                 
-                if task1.priority == "High" {
-                    return true
-                }
-                
-                if task1.priority == "Medium" {
-                    if task2.priority != "High" {
-                        return true
-                    }
-                }
-                
-                if task1.priority == "Low" {
-                    if task2.priority != "High" && task2.priority != "Medium" {
-                        return true
-                    }
+                if let index1 = priorityOrder.firstIndex(of: priority1),
+                   let index2 = priorityOrder.firstIndex(of: priority2) {
+                    return index1 < index2
                 }
                 
                 return false
@@ -107,7 +99,7 @@ struct ContentView: View {
     @State private var filterKeyword: String = ""
     @State private var appAnimation: Animation? = .default
     @State private var selectedOption: SortOptions = .createdAt
-    @State private var newPriority: Priorties = .none
+    @State private var newPriority: Priorities = .none
     
     var body: some View {
         NavigationSplitView {
@@ -117,13 +109,18 @@ struct ContentView: View {
             HStack {
                 Text("Sort By: ")
                 
-                Picker("Sort By", selection: $selectedOption.animation(appAnimation)) {
+                Picker("", selection: $selectedOption.animation(nil)) {
                     ForEach(SortOptions.allCases) { option in
                         Text(option.rawValue).tag(option)
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
+                .onChange(of: selectedOption) {
+                    DispatchQueue.main.async {
+                    }
+                }
             }
+            .padding()
             
             List {
                 ForEach(filteredTasks) { task in
@@ -140,8 +137,8 @@ struct ContentView: View {
                         addTask()
                     }
                 
-                Picker("Priority", selection: $newPriority.animation(appAnimation)) {
-                    ForEach(Priorties.allCases) { priority in
+                Picker("", selection: $newPriority.animation(appAnimation)) {
+                    ForEach(Priorities.allCases) { priority in
                         Text(priority.rawValue)
                             .tag(priority)
                     }
@@ -169,19 +166,28 @@ struct ContentView: View {
     }
 
     private func addTask() {
-        withAnimation {
-            guard !newTitle.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-                return
+        DispatchQueue.global().async {
+            let context = viewContext
+            
+            context.performAndWait {
+                guard !newTitle.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+                    return
+                }
+                
+                let newTask = Task(context: context)
+                newTask.createdAt = Date()
+                newTask.title = newTitle
+                newTask.priority = newPriority.rawValue
+                newTask.dueDate = Date()
+                newTask.haveDueDate = false
+                newTitle = ""
+                
+                do {
+                    try context.save()
+                } catch {
+                    print("Error saving changes: \(error.localizedDescription)")
+                }
             }
-            let newTask = Task(context: viewContext)
-            newTask.createdAt = Date()
-            newTask.title = newTitle
-            newTask.priority = newPriority.rawValue
-            newTask.dueDate = Date()
-            newTask.haveDueDate = false
-            newTitle = ""
-
-            saveChanges()
         }
     }
     
@@ -194,7 +200,7 @@ struct ContentView: View {
         }
     }
     
-    private func priorityColor(_ priority: Priorties) -> Color {
+    private func priorityColor(_ priority: Priorities) -> Color {
         switch priority {
         case .none:
             return .black

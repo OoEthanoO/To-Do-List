@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		813AD5152B159238003010D3 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813AD5142B159238003010D3 /* Task+CoreDataClass.swift */; };
 		813AD5172B15923D003010D3 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813AD5162B15923D003010D3 /* Task+CoreDataProperties.swift */; };
+		814E25602B17AC5E0068FE2C /* Priorities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814E255F2B17AC5E0068FE2C /* Priorities.swift */; };
+		814E25622B17AC770068FE2C /* TaskDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814E25612B17AC770068FE2C /* TaskDetails.swift */; };
+		81AED99E2B177FDB0010F13B /* To_Do_List_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AED99D2B177FDB0010F13B /* To_Do_List_MacApp.swift */; };
+		81AED9A02B177FDB0010F13B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AED99F2B177FDB0010F13B /* ContentView.swift */; };
+		81AED9A22B177FDC0010F13B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AED9A12B177FDC0010F13B /* Assets.xcassets */; };
+		81AED9A52B177FDC0010F13B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AED9A42B177FDC0010F13B /* Preview Assets.xcassets */; };
+		81AED9A72B177FDC0010F13B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AED9A62B177FDC0010F13B /* Persistence.swift */; };
+		81AED9AA2B177FDC0010F13B /* To_Do_List_Mac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81AED9A82B177FDC0010F13B /* To_Do_List_Mac.xcdatamodeld */; };
+		81AED9B12B1784A70010F13B /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AED9B02B1784A70010F13B /* Task+CoreDataClass.swift */; };
+		81AED9B32B1784C30010F13B /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AED9B22B1784C30010F13B /* Task+CoreDataProperties.swift */; };
 		81B6C8602B12D93D002B34EC /* To_Do_ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6C85F2B12D93D002B34EC /* To_Do_ListApp.swift */; };
 		81B6C8622B12D93D002B34EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6C8612B12D93D002B34EC /* ContentView.swift */; };
 		81B6C8642B12D93E002B34EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B6C8632B12D93E002B34EC /* Assets.xcassets */; };
@@ -16,12 +26,26 @@
 		81B6C8692B12D93E002B34EC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6C8682B12D93E002B34EC /* Persistence.swift */; };
 		81B6C86C2B12D93E002B34EC /* To_Do_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81B6C86A2B12D93E002B34EC /* To_Do_List.xcdatamodeld */; };
 		81B6C8732B12D97E002B34EC /* TaskDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6C8722B12D97E002B34EC /* TaskDetails.swift */; };
+		81B90D452B17B3B5006797D9 /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B90D442B17B3B5006797D9 /* TaskRow.swift */; };
 		81F243EF2B1416B9005D07F7 /* Priorties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F243EE2B1416B8005D07F7 /* Priorties.swift */; };
+		81FC75192B1775B600AA57B9 /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC75182B1775B600AA57B9 /* TaskRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		813AD5142B159238003010D3 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		813AD5162B15923D003010D3 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		814E255F2B17AC5E0068FE2C /* Priorities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priorities.swift; sourceTree = "<group>"; };
+		814E25612B17AC770068FE2C /* TaskDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetails.swift; sourceTree = "<group>"; };
+		81AED99B2B177FDB0010F13B /* To Do List Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do List Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AED99D2B177FDB0010F13B /* To_Do_List_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Do_List_MacApp.swift; sourceTree = "<group>"; };
+		81AED99F2B177FDB0010F13B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		81AED9A12B177FDC0010F13B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81AED9A42B177FDC0010F13B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		81AED9A62B177FDC0010F13B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		81AED9A92B177FDC0010F13B /* To_Do_List_Mac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = To_Do_List_Mac.xcdatamodel; sourceTree = "<group>"; };
+		81AED9AB2B177FDC0010F13B /* To_Do_List_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = To_Do_List_Mac.entitlements; sourceTree = "<group>"; };
+		81AED9B02B1784A70010F13B /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		81AED9B22B1784C30010F13B /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		81B6C85C2B12D93D002B34EC /* To Do List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B6C85F2B12D93D002B34EC /* To_Do_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Do_ListApp.swift; sourceTree = "<group>"; };
 		81B6C8612B12D93D002B34EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,10 +54,19 @@
 		81B6C8682B12D93E002B34EC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		81B6C86B2B12D93E002B34EC /* To_Do_List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = To_Do_List.xcdatamodel; sourceTree = "<group>"; };
 		81B6C8722B12D97E002B34EC /* TaskDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetails.swift; sourceTree = "<group>"; };
+		81B90D442B17B3B5006797D9 /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
 		81F243EE2B1416B8005D07F7 /* Priorties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priorties.swift; sourceTree = "<group>"; };
+		81FC75182B1775B600AA57B9 /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		81AED9982B177FDB0010F13B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81B6C8592B12D93D002B34EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,6 +82,7 @@
 			children = (
 				81B6C8722B12D97E002B34EC /* TaskDetails.swift */,
 				81B6C8612B12D93D002B34EC /* ContentView.swift */,
+				81FC75182B1775B600AA57B9 /* TaskRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -63,11 +97,38 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
+		81AED99C2B177FDB0010F13B /* To Do List Mac */ = {
+			isa = PBXGroup;
+			children = (
+				81AED99D2B177FDB0010F13B /* To_Do_List_MacApp.swift */,
+				81AED99F2B177FDB0010F13B /* ContentView.swift */,
+				81AED9A12B177FDC0010F13B /* Assets.xcassets */,
+				81AED9A62B177FDC0010F13B /* Persistence.swift */,
+				81AED9AB2B177FDC0010F13B /* To_Do_List_Mac.entitlements */,
+				81AED9A82B177FDC0010F13B /* To_Do_List_Mac.xcdatamodeld */,
+				81AED9B02B1784A70010F13B /* Task+CoreDataClass.swift */,
+				81AED9B22B1784C30010F13B /* Task+CoreDataProperties.swift */,
+				81AED9A32B177FDC0010F13B /* Preview Content */,
+				814E255F2B17AC5E0068FE2C /* Priorities.swift */,
+				814E25612B17AC770068FE2C /* TaskDetails.swift */,
+				81B90D442B17B3B5006797D9 /* TaskRow.swift */,
+			);
+			path = "To Do List Mac";
+			sourceTree = "<group>";
+		};
+		81AED9A32B177FDC0010F13B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				81AED9A42B177FDC0010F13B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		81B6C8532B12D93D002B34EC = {
 			isa = PBXGroup;
 			children = (
-				810F02202B13E2460062F4C6 /* Core Data */,
 				81B6C85E2B12D93D002B34EC /* To Do List */,
+				81AED99C2B177FDB0010F13B /* To Do List Mac */,
 				81B6C85D2B12D93D002B34EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				81B6C85C2B12D93D002B34EC /* To Do List.app */,
+				81AED99B2B177FDB0010F13B /* To Do List Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,12 +145,13 @@
 		81B6C85E2B12D93D002B34EC /* To Do List */ = {
 			isa = PBXGroup;
 			children = (
-				810F021F2B13E2370062F4C6 /* Views */,
+				810F02202B13E2460062F4C6 /* Core Data */,
 				81B6C85F2B12D93D002B34EC /* To_Do_ListApp.swift */,
+				81F243EE2B1416B8005D07F7 /* Priorties.swift */,
+				810F021F2B13E2370062F4C6 /* Views */,
 				81B6C8632B12D93E002B34EC /* Assets.xcassets */,
 				81B6C86A2B12D93E002B34EC /* To_Do_List.xcdatamodeld */,
 				81B6C8652B12D93E002B34EC /* Preview Content */,
-				81F243EE2B1416B8005D07F7 /* Priorties.swift */,
 			);
 			path = "To Do List";
 			sourceTree = "<group>";
@@ -104,6 +167,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		81AED99A2B177FDB0010F13B /* To Do List Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81AED9AE2B177FDC0010F13B /* Build configuration list for PBXNativeTarget "To Do List Mac" */;
+			buildPhases = (
+				81AED9972B177FDB0010F13B /* Sources */,
+				81AED9982B177FDB0010F13B /* Frameworks */,
+				81AED9992B177FDB0010F13B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "To Do List Mac";
+			productName = "To Do List Mac";
+			productReference = 81AED99B2B177FDB0010F13B /* To Do List Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		81B6C85B2B12D93D002B34EC /* To Do List */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81B6C86F2B12D93E002B34EC /* Build configuration list for PBXNativeTarget "To Do List" */;
@@ -131,6 +211,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					81AED99A2B177FDB0010F13B = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					81B6C85B2B12D93D002B34EC = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -150,11 +233,21 @@
 			projectRoot = "";
 			targets = (
 				81B6C85B2B12D93D002B34EC /* To Do List */,
+				81AED99A2B177FDB0010F13B /* To Do List Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		81AED9992B177FDB0010F13B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81AED9A52B177FDC0010F13B /* Preview Assets.xcassets in Resources */,
+				81AED9A22B177FDC0010F13B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81B6C85A2B12D93D002B34EC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,6 +260,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		81AED9972B177FDB0010F13B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814E25602B17AC5E0068FE2C /* Priorities.swift in Sources */,
+				81AED9A72B177FDC0010F13B /* Persistence.swift in Sources */,
+				81AED9B12B1784A70010F13B /* Task+CoreDataClass.swift in Sources */,
+				81AED9A02B177FDB0010F13B /* ContentView.swift in Sources */,
+				81AED99E2B177FDB0010F13B /* To_Do_List_MacApp.swift in Sources */,
+				814E25622B17AC770068FE2C /* TaskDetails.swift in Sources */,
+				81B90D452B17B3B5006797D9 /* TaskRow.swift in Sources */,
+				81AED9B32B1784C30010F13B /* Task+CoreDataProperties.swift in Sources */,
+				81AED9AA2B177FDC0010F13B /* To_Do_List_Mac.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81B6C8582B12D93D002B34EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,6 +286,7 @@
 				81B6C8602B12D93D002B34EC /* To_Do_ListApp.swift in Sources */,
 				813AD5172B15923D003010D3 /* Task+CoreDataProperties.swift in Sources */,
 				81F243EF2B1416B9005D07F7 /* Priorties.swift in Sources */,
+				81FC75192B1775B600AA57B9 /* TaskRow.swift in Sources */,
 				81B6C8732B12D97E002B34EC /* TaskDetails.swift in Sources */,
 				81B6C86C2B12D93E002B34EC /* To_Do_List.xcdatamodeld in Sources */,
 			);
@@ -185,6 +295,64 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		81AED9AC2B177FDC0010F13B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "To Do List Mac/To_Do_List_Mac.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"To Do List Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = J679C73527;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ethanyan.To-Do-List-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		81AED9AD2B177FDC0010F13B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "To Do List Mac/To_Do_List_Mac.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"To Do List Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = J679C73527;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ethanyan.To-Do-List-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		81B6C86D2B12D93E002B34EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -369,6 +537,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		81AED9AE2B177FDC0010F13B /* Build configuration list for PBXNativeTarget "To Do List Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81AED9AC2B177FDC0010F13B /* Debug */,
+				81AED9AD2B177FDC0010F13B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		81B6C8572B12D93D002B34EC /* Build configuration list for PBXProject "To Do List" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -390,6 +567,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		81AED9A82B177FDC0010F13B /* To_Do_List_Mac.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				81AED9A92B177FDC0010F13B /* To_Do_List_Mac.xcdatamodel */,
+			);
+			currentVersion = 81AED9A92B177FDC0010F13B /* To_Do_List_Mac.xcdatamodel */;
+			path = To_Do_List_Mac.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		81B6C86A2B12D93E002B34EC /* To_Do_List.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

@@ -1,39 +1,33 @@
 //
-//  To_Do_ListApp.swift
-//  To Do List
+//  To_Do_List_MacApp.swift
+//  To Do List Mac
 //
-//  Created by Ethan Xu on 2023-11-25.
+//  Created by Ethan Xu on 2023-11-29.
 //
 
 import SwiftUI
-import CoreData
 
 @main
 struct To_Do_ListApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .onAppear {
+                    AppDelegate().setDueDateForTasksWithoutDueDate()
+                }
         }
     }
 }
 
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        deleteTasksWithEmptyTitle()
-        
-        return true
-    }
-    
-    private func setDueDateForTasksWithoutDueDate() {
+class AppDelegate {
+    func setDueDateForTasksWithoutDueDate() {
         let context = PersistenceController.shared.container.viewContext
         
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "haveDueDate == false")
+        fetchRequest.predicate = NSPredicate(format: "haveDueDate = false")
         
         do {
             let tasksWithoutDueDate = try context.fetch(fetchRequest)
@@ -46,7 +40,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         }
     }
     
-    private func deleteTasksWithEmptyTitle() {
+    func deleteTasksWithEmptyTitle() {
         let context = PersistenceController.shared.container.viewContext
         
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
@@ -63,4 +57,3 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         }
     }
 }
-

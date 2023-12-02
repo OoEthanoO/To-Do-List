@@ -3,21 +3,22 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in closure #2 in closure #1 in closure #3 in closure #1 in ContentView.body.getter:ContentView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "task.priority">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "closure #4 in closure #1 in TaskDetails.body.getter:TaskDetails.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "task.isDeleted">
+            </PersistentString>
+            <PersistentString
+               value = "task.haveDueDate">
+            </PersistentString>
             <PersistentString
                value = "task.dueDate">
             </PersistentString>
             <PersistentString
-               value = "task.haveDueDate">
+               value = "task.isComplete">
+            </PersistentString>
+            <PersistentString
+               value = "task.title">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -29,6 +30,25 @@
             </PersistentString>
             <PersistentString
                value = "ContentView().priorityColor(task.priority)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #2 in closure #1 in closure #3 in closure #1 in ContentView.body.getter:ContentView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "task.priority">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in closure #3 in closure #1 in TaskRow.body.getter:TaskRow.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "task.dueDate">
+            </PersistentString>
+            <PersistentString
+               value = "task.isDeleted">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

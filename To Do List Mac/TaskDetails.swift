@@ -1,8 +1,8 @@
 //
 //  TaskDetails.swift
-//  To Do List
+//  To Do List Mac
 //
-//  Created by Ethan Xu on 2023-11-25.
+//  Created by Ethan Xu on 2023-11-29.
 //
 
 import SwiftUI
@@ -12,17 +12,10 @@ struct TaskDetails: View {
     
     @ObservedObject var task: Task
     
-    private func saveChanges() {
-        do {
-            try viewContext.save()
-        } catch {
-            print("Error saving changes: \(error.localizedDescription)")
-        }
-    }
-    
     var body: some View {
         Text("Edit Task")
             .font(.title.bold())
+            .padding(.top)
         
         List {
             HStack {
@@ -42,7 +35,7 @@ struct TaskDetails: View {
                     .foregroundColor(ContentView().priorityColor(task.priority))
 
                 Picker("", selection: $task.priority) {
-                    ForEach(Priorties.allCases) { priority in
+                    ForEach(Priorities.allCases) { priority in
                         Text(priority.rawValue)
                             .tag(priority)
                     }
@@ -105,20 +98,13 @@ struct TaskDetails: View {
             }
         }
     }
-}
-
-struct TaskDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        let newTask = Task(context: viewContext)
-        newTask.createdAt = Date()
-        newTask.priority = "High"
-        newTask.isComplete = false
-        newTask.dueDate = Date()
-        newTask.haveDueDate = true
-        
-        return TaskDetails(task: newTask)
-            .environment(\.managedObjectContext, viewContext)
+    
+    private func saveChanges() {
+        do {
+            try viewContext.save()
+        } catch {
+            print("Error saving changes: \(error.localizedDescription)")
+        }
     }
 }
+
