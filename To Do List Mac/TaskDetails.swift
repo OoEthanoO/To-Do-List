@@ -40,7 +40,6 @@ struct TaskDetails: View {
                             .tag(priority)
                     }
                 }
-                .pickerStyle(MenuPickerStyle())
                 .onChange(of: task.priority) {
                     saveChanges()
                 }

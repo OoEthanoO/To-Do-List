@@ -41,51 +41,57 @@ struct ContentView: View {
     private var tasks: FetchedResults<Task>
     
     var sortedTasks: [Task] {
-        tasks.sorted { (task1: Task, task2: Task) -> Bool in
-            switch selectedOption {
-            case .title:
-                return task1.title < task2.title
-            case .createdAt:
-                return task1.createdAt ?? Date() < task2.createdAt ?? Date()
-            case .isComplete:
-                if task1.isComplete && !task2.isComplete {
-                    return false
-                } else if !task1.isComplete && task2.isComplete {
-                    return true
-                } else {
+        var sortedTasks: [Task] = []
+        
+        DispatchQueue.global().async {
+            sortedTasks = tasks.sorted { (task1: Task, task2: Task) -> Bool in
+                switch selectedOption {
+                case .title:
+                    return task1.title < task2.title
+                case .createdAt:
                     return task1.createdAt ?? Date() < task2.createdAt ?? Date()
-                }
-            case .priority:
-                let priorityOrder: [Priorities] = [.high, .medium, .low, .none]
-                        
-                guard let priority1 = Priorities(rawValue: task1.priority ),
-                      let priority2 = Priorities(rawValue: task2.priority ) else {
+                case .isComplete:
+                    if task1.isComplete && !task2.isComplete {
+                        return false
+                    } else if !task1.isComplete && task2.isComplete {
+                        return true
+                    } else {
+                        return task1.createdAt ?? Date() < task2.createdAt ?? Date()
+                    }
+                case .priority:
+                    let priorityOrder: [Priorities] = [.high, .medium, .low, .none]
+                            
+                    guard let priority1 = Priorities(rawValue: task1.priority ),
+                          let priority2 = Priorities(rawValue: task2.priority ) else {
+                        return false
+                    }
+                    
+                    if let index1 = priorityOrder.firstIndex(of: priority1),
+                       let index2 = priorityOrder.firstIndex(of: priority2) {
+                        return index1 < index2
+                    }
+                    
                     return false
-                }
-                
-                if let index1 = priorityOrder.firstIndex(of: priority1),
-                   let index2 = priorityOrder.firstIndex(of: priority2) {
-                    return index1 < index2
-                }
-                
-                return false
-            case .dueDate:
-                if task1.haveDueDate == false && task2.haveDueDate == false {
-                    return (task1.createdAt ?? Date()) < (task2.createdAt ?? Date())
-                }
-                
-                if task1.haveDueDate != task2.haveDueDate {
-                    return task1.haveDueDate && !task2.haveDueDate
-                }
-                
-                let dayComparator = dayOnlyComparator(date1: task1.dueDate, date2: task2.dueDate)
-                if dayComparator != .orderedSame {
-                    return dayComparator == .orderedAscending
-                } else {
-                    return (task1.createdAt ?? Date()) < (task2.createdAt ?? Date())
+                case .dueDate:
+                    if task1.haveDueDate == false && task2.haveDueDate == false {
+                        return (task1.createdAt ?? Date()) < (task2.createdAt ?? Date())
+                    }
+                    
+                    if task1.haveDueDate != task2.haveDueDate {
+                        return task1.haveDueDate && !task2.haveDueDate
+                    }
+                    
+                    let dayComparator = dayOnlyComparator(date1: task1.dueDate, date2: task2.dueDate)
+                    if dayComparator != .orderedSame {
+                        return dayComparator == .orderedAscending
+                    } else {
+                        return (task1.createdAt ?? Date()) < (task2.createdAt ?? Date())
+                    }
                 }
             }
         }
+        
+        return sortedTasks
     }
     
     var filteredTasks: [Task] {
@@ -114,7 +120,6 @@ struct ContentView: View {
                         Text(option.rawValue).tag(option)
                     }
                 }
-                .pickerStyle(MenuPickerStyle())
                 .onChange(of: selectedOption) {
                     DispatchQueue.main.async {
                     }
@@ -143,7 +148,6 @@ struct ContentView: View {
                             .tag(priority)
                     }
                 }
-                .pickerStyle(MenuPickerStyle())
                 
                 if (newPriority == .none) {
                     Label("", systemImage: "tag")
