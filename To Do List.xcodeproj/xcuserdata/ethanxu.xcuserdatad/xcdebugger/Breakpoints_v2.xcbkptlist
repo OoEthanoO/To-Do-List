@@ -55,17 +55,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AE88475E-0A32-4199-8664-8DCF43E0874B"
+            uuid = "F1499657-0238-4E38-8D31-51F15DE63C25"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "To Do List Mac/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "sortedTasks"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "F1499657-0238-4E38-8D31-51F15DE63C25 - c20ae23d1b01157a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (To_Do_List_Mac.Task, To_Do_List_Mac.Task) -&gt; Swift.Bool in closure #1 @Sendable () -&gt; () in To_Do_List_Mac.ContentView.sortedTasks.getter : Swift.Array&lt;To_Do_List_Mac.Task&gt;"
+                  moduleName = "To Do List Mac"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethanxu/Library/Mobile%20Documents/com~apple~CloudDocs/disk/Swift/To%20Do%20List/To%20Do%20List%20Mac/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "7056">
+               </Location>
+               <Location
+                  uuid = "F1499657-0238-4E38-8D31-51F15DE63C25 - 55a5f6a8f83f784e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #3 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.onSubmit(of: SwiftUI.SubmitTriggers, _: () -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.Picker&lt;SwiftUI.Text, To_Do_List_Mac.Priorities, SwiftUI.ForEach&lt;Swift.Array&lt;To_Do_List_Mac.Priorities&gt;, Swift.String, &lt;&lt;opaque return type of SwiftUI.View.tag&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;, &lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;To_Do_List_Mac.Task&gt;, Swift.ObjectIdentifier, SwiftUI.NavigationLink&lt;To_Do_List_Mac.TaskRow, To_Do_List_Mac.TaskDetails&gt;&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0)&gt; in To_Do_List_Mac.ContentView.body.getter : some"
+                  moduleName = "To Do List Mac"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethanxu/Library/Mobile%20Documents/com~apple~CloudDocs/disk/Swift/To%20Do%20List/To%20Do%20List%20Mac/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
